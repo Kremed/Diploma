@@ -11,10 +11,10 @@
 
         <Label
             x:Name="LblFullName"
-            FontSize="40"
-            TextColor="White"
             Background="Red"
-            HorizontalTextAlignment="Center" />
+            FontSize="40"
+            HorizontalTextAlignment="Center"
+            TextColor="White" />
 
         <Button Clicked="SetTheFullName" Text="اظهار الاسم كاملا" />
 
