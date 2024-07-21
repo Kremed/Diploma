@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Diploma.Variables.CalculatorPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <VerticalStackLayout Margin="20" Spacing="20">
+
+        <Entry
+            x:Name="TxtFirstNumber"
+            HorizontalTextAlignment="Center"
+            Placeholder="اكتب الرقم الاول" />
+
+        <Entry
+            x:Name="TxtSecondNumber"
+            HorizontalTextAlignment="Center"
+            Placeholder="اكتب الرقم التاني" />
+
+        <Button
+            x:Name="BtnCalculat"
+            Clicked="BtnCalculat_Clicked"
+            FontAttributes="Bold"
+            FontSize="16"
+            Text="حساب حاصل الجمع" />
+
+    </VerticalStackLayout>
+</ContentPage>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

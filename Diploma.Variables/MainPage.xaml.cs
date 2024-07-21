@@ -1,11 +1,4 @@
-﻿using System.Numerics;
-using System.Threading.Tasks;
-#if WINDOWS
-using Windows.Storage;
-using Windows.Storage.Pickers;
-using Windows.Storage.Streams;
-#endif
-namespace Diploma.Variables
+﻿namespace Diploma.Variables
 {
     public partial class MainPage : ContentPage
     {
@@ -13,7 +6,7 @@ namespace Diploma.Variables
         public MainPage()
         {
             InitializeComponent();
-            WorkWithArrayExpressions();
+
         }
 
         public void IntegerInAction()
@@ -175,7 +168,6 @@ namespace Diploma.Variables
 
         }
 
-
         public void WorkWithStringExpressions()
         {
             string greeting = "Hallo, World!";
@@ -267,7 +259,6 @@ namespace Diploma.Variables
             double tangent = Math.Tan(45);  // Tangent 
         }
 
-
         public void HomeWork()
         {
             string[] Cars = {
@@ -279,13 +270,187 @@ namespace Diploma.Variables
             };
 
             //01 - Finde the Index For "تـايوتا" :
-
+            int index = Array.IndexOf(Cars, "تـايوتا");
             //02 - Via code get the Length of Cars Array :
-
+            int length = Cars.Length;
             //03 - set all Array Elements in string, and remove [!] from this string
 
         }
 
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            //IterationStatments();
+            SelectionStatments();
+        }
+
+        public async void SelectionStatments()
+        {
+            //    string phoneNumber = "0924474464";
+            //    string phoneNumber2 = "+218924474464";
+
+            //    //if (phoneNumber.StartsWith("+218") && 
+            //    //    phoneNumber.Contains("09") && 
+            //    //    phoneNumber.Length == 13 )
+            //    //{
+
+            //    //}
+
+
+            //    int StudentMark = 105;
+
+            //    if (StudentMark < 50 && StudentMark > 0)
+            //    {
+            //        await DisplayAlert("النتيجة", "راسب", "OK");
+            //    }
+            //    else if (StudentMark >= 50 && StudentMark < 65 )
+            //    {
+            //        await DisplayAlert("النتيجة", "مقبةل", "OK");
+            //    }
+            //    else if (StudentMark >= 65 && StudentMark < 75)
+            //    {
+            //        await DisplayAlert("النتيجة", "جيد", "OK");
+            //    }
+            //    else if (StudentMark >= 75 && StudentMark < 85)
+            //    {
+            //        await DisplayAlert("النتيجة", "جيد جدا", "OK");
+            //    }
+            //    else if (StudentMark >= 85 && StudentMark < 100)
+            //    {
+            //        await DisplayAlert("النتيجة", "ممتاز", "OK");
+            //    }
+            //    else
+            //    {
+            //        await DisplayAlert("النتيجة", "ادخال خاطئ, الرجاء التأكيد من الدرجة", "OK");
+            //    }
+
+
+
+            //    int walletBalance = 700;
+            //    int ItemPrice = 800;
+
+
+            //    if (walletBalance > ItemPrice)
+            //    {
+            //        await DisplayAlert($"معاملة ناجحة", $"سيتم خصم قيمة اشتراكك في الباقة بسعر {ItemPrice} من رصيد محفظتك : {walletBalance}", "موافق");
+            //    }
+            //    else
+            //    {
+            //        await DisplayAlert($"معاملة ملغية", $"لايوجد لديك رصيد كافي, الرجاء اعادة شحن المحفظة من أقرب نقطة شحن.", "موافق");
+            //    }
+
+
+            //    int ageAllowed = 30;
+            //    int studentAge = 31;
+            //    if (studentAge > ageAllowed)
+            //    {
+            //        await DisplayAlert($"التسجيل مسموح", $"نعم عمرالطالب هوا {studentAge} اكبر من العمر المسموح به {ageAllowed}", "OK");
+            //    }
+
+            //    //======================================
+
+            //    var studentMark = 70;
+
+
+            //    if (studentMark < 50)
+            //    {
+            //        await DisplayAlert($"نتيجة الامتحان", $"تقديرك هوا : راسب", "OK");
+            //    }
+            //    else if (studentMark <= 65)
+            //    {
+            //        await DisplayAlert($"نتيجة الامتحان", $"تقديرك هوا :{studentMark} مقبــول", "OK");
+            //    }
+            //    else if (studentMark <= 75)
+            //    {
+            //        await DisplayAlert($"نتيجة الامتحان", $"تقديرك هوا : جيد", "OK");
+            //    }
+            //    else if (studentMark <= 85)
+            //    {
+            //        await DisplayAlert($"نتيجة الامتحان", $"تقديرك هوا : جيد جـداٌ", "OK");
+            //    }
+            //    else
+            //    {
+            //        await DisplayAlert($"نتيجة الامتحان", $"تقديرك هوا : ممتـــاز", "OK");
+            //    }
+
+
+
+
+
+
+
+
+
+            float LYDUSD = 6.95f;
+            float LYDEUR = 7.48f;
+            float LYDGBP = 8.61f;
+            float LYDTUN = 2.17f;
+
+            float ExchangeCurrencyAmount;
+            // كمية سعر صرف العملة
+
+           
+            float LibyanDinarAmount = 3450;
+            string CurrencyName = "EUR";
+
+            if (CurrencyName == "USD")
+                ExchangeCurrencyAmount = LibyanDinarAmount / LYDUSD;
+            else if (CurrencyName == "EUR")
+                ExchangeCurrencyAmount = LibyanDinarAmount / LYDEUR;
+            else if (CurrencyName == "GBP")
+                ExchangeCurrencyAmount = LibyanDinarAmount / LYDGBP;
+            else if (CurrencyName == "TUN")
+                ExchangeCurrencyAmount = LibyanDinarAmount / LYDTUN;
+            else
+            {
+                ExchangeCurrencyAmount = 0;
+                await DisplayAlert("نتيجة المعاملة",
+                "لانملك خيار تصريف نوع العملة" + CurrencyName,
+                "موافق");
+                return;
+            }
+
+            await DisplayAlert("نتيجة المعاملة",
+                "من صرف : " + LibyanDinarAmount + " LYD " + "ستتحصل علي " + ExchangeCurrencyAmount + " " + CurrencyName,
+                "موافق");
+
+
+
+
+
+
+
+
+
+
+
+
+            switch (CurrencyName)
+            {
+                case "USD":
+                    ExchangeCurrencyAmount = LibyanDinarAmount / LYDUSD;
+                    break;
+
+                case "EUR":
+                    ExchangeCurrencyAmount = LibyanDinarAmount / LYDEUR;
+                    break;
+
+                case "GBP":
+                    ExchangeCurrencyAmount = LibyanDinarAmount / LYDGBP;
+                    break;
+
+                case "TUN":
+                    ExchangeCurrencyAmount = LibyanDinarAmount / LYDTUN;
+                    break;
+
+                default:
+                    break;
+            }
+            await DisplayAlert("نتيجة المعاملة",
+                "من صرف : " + LibyanDinarAmount + " LYD " + "ستتحصل علي " + ExchangeCurrencyAmount + " " + CurrencyName,
+                "موافق");
+        }
+
+       
     }
 
 }
