@@ -7,28 +7,39 @@
 
     <StackLayout Margin="20,50" Spacing="20">
 
-        <Entry
-            x:Name="TxtFirstName"
-            FontSize="20"
-            Placeholder="الرجاء ادخال اسم الاول"
-            TextColor="Red" />
+        <StackLayout IsVisible="False">
+            <Entry
+                x:Name="TxtFirstName"
+                FontSize="20"
+                Placeholder="الرجاء ادخال اسم الاول"
+                TextColor="Red" />
 
-        <Entry x:Name="TxtLastName" Placeholder="الرجاء ادخال اللقب" />
+            <Entry
+                x:Name="TxtLastName"
+                FontSize="20"
+                Placeholder="الرجاء ادخال اللقب"
+                TextColor="Red" />
 
-        <Label
-            x:Name="LblFullName"
-            Background="Red"
-            FontSize="40"
-            HorizontalTextAlignment="Center"
-            Text=""
-            TextColor="White" />
+            <Label
+                x:Name="LblFullName"
+                Background="Red"
+                FontSize="40"
+                HorizontalTextAlignment="Center"
+                Text=""
+                TextColor="White" />
 
+            <Button Clicked="SetTheFullName" Text="اظهار الاسم كاملا" />
+        </StackLayout>
 
-        <Button Clicked="SetTheFullName" Text="اظهار الاسم كاملا" />
 
         <Button Clicked="Button_Clicked" Text="اظهار رسالة" />
 
-        <Button Clicked="Button_Clicked_1" Text="الالة الحاسبة" />
+        <Button
+            x:Name="BtnGoToCardPage"
+            Clicked="BtnGoToCardPage_ClickedAsync"
+            Text="أدارة كروت الأتصالات - Array + For Loop" />
+
+
 
     </StackLayout>
 </ContentPage>

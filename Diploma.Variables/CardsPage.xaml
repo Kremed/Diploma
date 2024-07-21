@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Diploma.Variables.CardsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="CardsPage"
+    FlowDirection="RightToLeft">
+
+
+    <StackLayout Margin="20" Spacing="10">
+
+        <!--  01  -->
+        <Label
+            Margin="0,20,0,0"
+            FontAttributes="Bold"
+            FontSize="16"
+            Text="الرجاء أدخال الكروت Input:" />
+
+        <!--  02  -->
+        <Border
+            Padding="0,0,0,-10"
+            BackgroundColor="#EEEEEE"
+            Stroke="#EEEEEE">
+
+            <Editor x:Name="TxtInput" HeightRequest="300" />
+
+        </Border>
+
+        <!--  03  -->
+        <StackLayout Orientation="Horizontal" Spacing="5">
+
+            <Button
+                x:Name="BtnRegenerateTheInbut"
+                BackgroundColor="#36BA98"
+                Clicked="BtnRegenerateTheInbut_Clicked"
+                Text="01 ادراج المدخلات" />
+
+            <Button
+                x:Name="BtnProcess"
+                BackgroundColor="#36BA98"
+                Clicked="BtnProcess_Clicked"
+                Text="02 معـالجة البيانات" />
+
+            <Button
+                x:Name="BtnClear"
+                BackgroundColor="#E76F51"
+                Clicked="BtnClear_Clicked"
+                Text="حذف النتيجة" />
+        </StackLayout>
+
+
+        <!--  ============================================================================  -->
+
+        <StackLayout IsVisible="False">
+
+            <!--  04  -->
+            <Label
+                x:Name="LblResultTitle"
+                Margin="0,20,0,0"
+                FontAttributes="Bold"
+                FontSize="16"
+                Text="نتيجة  عملية المعالجة Outout :" />
+
+            <!--  05  -->
+            <Border
+                x:Name="BrdOutput"
+                Padding="0,0,0,-10"
+                BackgroundColor="#EEEEEE"
+                Stroke="#EEEEEE">
+
+                <Editor x:Name="TxtOutput" HeightRequest="300" />
+
+            </Border>
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>

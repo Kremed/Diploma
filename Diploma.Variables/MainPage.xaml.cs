@@ -1,4 +1,5 @@
-﻿namespace Diploma.Variables
+﻿
+namespace Diploma.Variables
 {
     public partial class MainPage : ContentPage
     {
@@ -279,8 +280,8 @@
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            //IterationStatments();
-            SelectionStatments();
+            IterationStatments();
+            //SelectionStatments();
         }
 
         public async void SelectionStatments()
@@ -374,12 +375,6 @@
 
 
 
-
-
-
-
-
-
             float LYDUSD = 6.95f;
             float LYDEUR = 7.48f;
             float LYDGBP = 8.61f;
@@ -388,7 +383,7 @@
             float ExchangeCurrencyAmount;
             // كمية سعر صرف العملة
 
-           
+
             float LibyanDinarAmount = 3450;
             string CurrencyName = "EUR";
 
@@ -412,16 +407,6 @@
             await DisplayAlert("نتيجة المعاملة",
                 "من صرف : " + LibyanDinarAmount + " LYD " + "ستتحصل علي " + ExchangeCurrencyAmount + " " + CurrencyName,
                 "موافق");
-
-
-
-
-
-
-
-
-
-
 
 
             switch (CurrencyName)
@@ -450,7 +435,63 @@
                 "موافق");
         }
 
+        //Loops => For Foreach While
+        public async void IterationStatments()
+        {
+            string[] studentNames = {
+                "01 - Rami",
+                "02 - Elias",
+                "03 - Mahmoud",
+                "04 - أنس",
+                "05 - ســالم",
+                "06 - محمود",
+                "07 - أحمد",
+                "08 - المعتصم",
+                "09 - أسماعيل",
+                "10 - الهادي"
+            };
+
+          
+            int Length = studentNames.Length;
+
+            var counter = 0;
+
+            while (counter < Length)
+            {
+                await DisplayAlert("اعلان", studentNames[counter], "موافق");
+
+                counter = counter + 1;
+            }
+
+            counter = 0;
+
+            do
+            {
+                await DisplayAlert("اعلان", studentNames[counter], "موافق");
+                counter = counter + 1;
+            }
+            while (counter < Length - 2);
+
+
+            for (int kremed = 0; kremed < Length; kremed = kremed + 1)
+            {
+                await DisplayAlert("اعلان", studentNames[kremed], "موافق");
+            }
+
+            foreach (string item in studentNames)
+            {
+                await DisplayAlert("اعلان", item, "موافق");
+            }
+
+        }
+
        
+
+        private async void BtnGoToCardPage_ClickedAsync(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new CardsPage());
+            
+        }
     }
 
 }
