@@ -7,7 +7,10 @@
     FlowDirection="RightToLeft">
 
 
-    <StackLayout Margin="20" Spacing="10">
+    <StackLayout
+        Margin="20"
+        Orientation="Vertical"
+        Spacing="20">
 
         <!--  01  -->
         <Label
@@ -22,12 +25,16 @@
             BackgroundColor="#EEEEEE"
             Stroke="#EEEEEE">
 
-            <Editor x:Name="TxtInput" HeightRequest="300" />
+            <Editor
+                x:Name="TxtInput"
+                FlowDirection="LeftToRight"
+                HeightRequest="100" />
 
         </Border>
 
         <!--  03  -->
         <StackLayout Orientation="Horizontal" Spacing="5">
+
 
             <Button
                 x:Name="BtnRegenerateTheInbut"
@@ -51,27 +58,26 @@
 
         <!--  ============================================================================  -->
 
-        <StackLayout IsVisible="False">
 
-            <!--  04  -->
-            <Label
-                x:Name="LblResultTitle"
-                Margin="0,20,0,0"
-                FontAttributes="Bold"
-                FontSize="16"
-                Text="نتيجة  عملية المعالجة Outout :" />
+        <!--  04  -->
+        <Label
+            x:Name="LblResultTitle"
+            Margin="0,20,0,0"
+            FontAttributes="Bold"
+            FontSize="16"
+            IsVisible="False"
+            Text="نتيجة  عملية المعالجة Outout :" />
 
-            <!--  05  -->
-            <Border
-                x:Name="BrdOutput"
-                Padding="0,0,0,-10"
-                BackgroundColor="#EEEEEE"
-                Stroke="#EEEEEE">
+        <!--  05  -->
+        <Border
+            x:Name="BrdOutput"
+            Padding="0,0,0,-10"
+            BackgroundColor="#EEEEEE"
+            IsVisible="False"
+            Stroke="#EEEEEE">
 
-                <Editor x:Name="TxtOutput" HeightRequest="300" />
-
-            </Border>
-        </StackLayout>
+            <Editor x:Name="TxtOutput" HeightRequest="300" />
+        </Border>
 
     </StackLayout>
 </ContentPage>
